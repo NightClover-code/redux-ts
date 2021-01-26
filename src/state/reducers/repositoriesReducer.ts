@@ -6,9 +6,15 @@ interface RepositoriesState {
   error: string | null;
   data: string[];
 }
+//initial State
+const initialState = {
+  loading: false,
+  error: null,
+  data: [],
+};
 //reducer
 const repositoriesReducer = (
-  state: RepositoriesState,
+  state: RepositoriesState = initialState,
   action: Action
 ): RepositoriesState => {
   switch (action.type) {
